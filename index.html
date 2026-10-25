@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dong ASMR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff; --ink:#000; --mute:#6b6b6b; --soft:#ececec; --line:#d4d4d4; --brand:#000;
+  --f:"Archivo","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000; --ink:#fff; --mute:#9a9a9a; --soft:#1a1a1a; --line:#333; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000; --ink:#fff; --mute:#9a9a9a; --soft:#1a1a1a; --line:#333; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--f)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+.d{font-stretch:68%;font-weight:850;line-height:.88;letter-spacing:-.01em;text-transform:uppercase}
+.ic{width:2.75rem;height:2.75rem;flex:none;display:block}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+nav .mark{text-decoration:none;font-size:1.5rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;font-weight:500}
+nav ul a{text-decoration:none;padding-bottom:.2em;border-bottom:2px solid transparent}
+nav ul a[aria-current="page"]{border-bottom-color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:2.5rem;padding:1.5rem 0 4rem;align-items:end}
+h1{margin:0 0 1.25rem;font-size:clamp(5rem,15vw,12rem)}
+.lead{font-size:1.35rem;font-weight:500;margin:0 0 1.5rem;max-width:22ch;line-height:1.25}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.pill{border:1.5px solid var(--ink);border-radius:99px;padding:.4rem 1rem;font:500 .95rem var(--f);text-decoration:none;background:transparent;color:var(--ink);cursor:pointer}
+.pill:hover,.pill:active{background:var(--ink);color:var(--bg)}
+.hint{color:var(--mute);font-size:.9rem;margin:0}
+.photos{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:.75rem;height:min(560px,70vw)}
+.ph{position:relative;margin:0;background:var(--soft);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:.9rem;text-align:center;padding:1rem}
+.ph:first-child{grid-row:span 2}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.band{background:var(--ink);color:var(--bg);padding:3.5rem 0 2rem;border-top:10px solid var(--brand)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem 1rem}
+.stats.three{grid-template-columns:repeat(3,1fr)}
+.stats b{display:block;font-stretch:68%;font-weight:850;font-size:clamp(2.75rem,7vw,5.5rem);line-height:.9;letter-spacing:-.01em}
+.stats span{display:block;margin-top:.5rem;font-size:.95rem;opacity:.75}
+.note{margin:2rem 0 0;font-size:.85rem;opacity:.6}
+section{padding:4.5rem 0}
+h2{margin:0 0 2rem;font-size:clamp(2.5rem,7vw,4.5rem)}
+.ptitle{display:flex;align-items:center;gap:1rem;padding:2rem 0 2.5rem}
+.ptitle .ic{width:4.5rem;height:4.5rem}
+.ptitle h1{font-size:clamp(3.5rem,11vw,8rem);margin:0}
+.go{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.go a{display:flex;flex-direction:column;gap:3rem;padding:1.5rem;text-decoration:none;border:1.5px solid var(--ink)}
+.go a b{font-stretch:68%;font-weight:850;font-size:clamp(2rem,6vw,3.5rem);text-transform:uppercase;line-height:.95}
+.go a:hover{background:var(--ink);color:var(--bg)}
+.go .row{display:flex;align-items:center;gap:1rem}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem 1.25rem}
+.vcard{text-decoration:none;display:block}
+.thumb{position:relative;margin:0 0 .75rem;aspect-ratio:16/9;background:var(--soft);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:.85rem}
+.thumb.tall{aspect-ratio:9/16;max-width:320px}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vcard strong{display:block;font-weight:700;font-size:1.1rem;line-height:1.25}
+.vcard small{color:var(--mute)}
+.vcard:hover strong{text-decoration:underline;text-underline-offset:.2em}
+.badge{display:inline-block;background:var(--brand);color:#fff;font-weight:700;font-size:.8rem;padding:.15rem .6rem;margin-bottom:.5rem}
+.more{margin-top:2rem}
+.more a{font-weight:700}
+.where a{display:flex;align-items:center;gap:1.25rem;border-top:1px solid var(--line);padding:1rem .5rem;text-decoration:none}
+.where a:last-child{border-bottom:1px solid var(--line)}
+.where b{font-stretch:68%;font-weight:850;font-size:clamp(2rem,6vw,3.25rem);text-transform:uppercase;line-height:1;flex:1}
+.where span{color:var(--mute);text-align:right}
+.where a:hover{background:var(--soft)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:52ch}
+a.big{font-stretch:68%;font-weight:850;font-size:clamp(1.75rem,6vw,4rem);line-height:1;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.15em;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute);font-size:.9rem}
+@media (max-width:820px){
+  .hero,.about,.go{grid-template-columns:1fr}
+  .photos{height:80vw}
+  .stats,.stats.three{grid-template-columns:1fr 1fr}
+  nav ul{gap:1rem}
+  .where span{display:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".55" stop-color="#D62976"/><stop offset=".8" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient>
+    <symbol id="i-yt" viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#FF0000"/><path d="M19 16v16l14-8z" fill="#fff"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#000"/><g transform="translate(12 11) scale(1)"><path id="tn" d="M12.5.02c1.3-.02 2.6-.01 3.9-.02.1 1.5.6 3.1 1.8 4.2 1.1 1.1 2.7 1.6 4.2 1.8v4c-1.4 0-2.9-.3-4.2-1-.6-.3-1.1-.6-1.6-.9v8.7c-.1 1.4-.5 2.8-1.4 3.9-1.300 1.900-3.600 3.200-5.900 3.200-1.400.1-2.900-.3-4.100-1-2-1.200-3.400-3.400-3.600-5.700v-1.500c.2-1.900 1.100-3.700 2.600-5 1.700-1.400 4-2.100 6.200-1.700v4.400c-1-.3-2.200-.2-3 .4-.6.4-1.100 1-1.400 1.800-.2.500-.1 1.100-.1 1.600.2 1.600 1.800 3 3.500 2.900 1.100 0 2.200-.7 2.800-1.600.2-.3.400-.7.400-1.100.1-1.800.1-3.600.1-5.400V.02z" fill="#25F4EE" transform="translate(-.9 -.9)"/><use href="#tn" fill="#FE2C55" transform="translate(1.8 1.8)"/><use href="#tn" fill="#fff" transform="translate(.45 .45)"/></g></symbol>
+    <symbol id="i-ig" viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="url(#ig)"/><rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="5.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.5" cy="16.5" r="1.8" fill="#fff"/></symbol>
+    <symbol id="i-sp" viewBox="0 0 48 48"><rect width="48" height="48" rx="24" fill="#1DB954"/><g fill="none" stroke="#000" stroke-linecap="round"><path d="M13 19c7.500-2.200 15.500-1.500 22 2" stroke-width="3.400"/><path d="M14.500 25.500c6-1.700 12-1 17 1.700" stroke-width="3"/><path d="M16 31.500c4.500-1.200 9-.7 12.500 1.200" stroke-width="2.600"/></g></symbol>
+    <symbol id="i-tw" viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#9146FF"/><path transform="translate(9 9) scale(1.25)" d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <nav>
+    <a class="mark d" href="#home">Dong ASMR</a>
+    <ul>
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#youtube" data-nav="youtube">YouTube</a></li>
+      <li><a href="#tiktok" data-nav="tiktok">TikTok</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main>
+<!-- HOME -->
+<div data-view="home">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <h1 class="d">Dong<br>ASMR</h1>
+        <p class="lead">Dong makes good sounds.</p>
+        <div class="pills" role="group" aria-label="Sound samples">
+          <button class="pill" data-s="tap">Tapping</button>
+          <button class="pill" data-s="brush">Brushing</button>
+          <button class="pill" data-s="crinkle">Crinkle</button>
+          <button class="pill" data-s="breath">Breath</button>
+        </div>
+        <p class="hint">Singapore. Tap a sound, with your volume low.</p>
+      </div>
+      <div class="photos">
+        <figure class="ph" data-photo="1">Photo 1<br>goes here</figure>
+        <figure class="ph" data-photo="2">Photo 2</figure>
+        <figure class="ph" data-photo="3">Photo 3</figure>
+      </div>
+    </header>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="stats">
+        <div><b>1.61M</b><span>YouTube subscribers</span></div>
+        <div><b>696M</b><span>YouTube views</span></div>
+        <div><b>676K</b><span>TikTok followers</span></div>
+        <div><b>125K</b><span>Instagram followers</span></div>
+      </div>
+      <p class="note">YouTube as of 24 October 2026. TikTok and Instagram counts come from the public profiles and may be a little behind.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <div class="go">
+        <a href="#youtube"><span class="row"><svg class="ic"><use href="#i-yt"/></svg></span><b>See the YouTube channel</b></a>
+        <a href="#tiktok"><span class="row"><svg class="ic"><use href="#i-tt"/></svg></span><b>See the TikTok page</b></a>
+      </div>
+    </section>
+
+    <section class="where" style="padding-top:0">
+      <h2 class="d">Follow</h2>
+      <a href="https://www.youtube.com/@DongASMR" target="_blank" rel="noopener"><svg class="ic"><use href="#i-yt"/></svg><b>YouTube</b><span>1.61M subscribers</span></a>
+      <a href="https://www.tiktok.com/@realdongasmr" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tt"/></svg><b>TikTok</b><span>676K followers</span></a>
+      <a href="https://www.instagram.com/dongasmr/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg><b>Instagram</b><span>125K followers</span></a>
+      <a href="https://open.spotify.com/show/0343xCm1AtIcnnC3IHfX7X" target="_blank" rel="noopener"><svg class="ic"><use href="#i-sp"/></svg><b>Spotify</b><span>Podcast</span></a>
+      <a href="https://www.twitch.tv/dongasmr" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tw"/></svg><b>Twitch</b><span>Live streams</span></a>
+    </section>
+
+    <section class="about">
+      <div><h2 class="d">About</h2></div>
+      <div>
+        <p>Dong is an ASMR creator from Singapore, making videos since 2019. The channel has grown to more than 1.6 million subscribers, with 1,158 videos covering triggers, sleep sessions and microphone tests.</p>
+        <p>Add your own story here: how you started and what you want viewers to feel.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- YOUTUBE -->
+<div data-view="youtube" hidden style="--brand:#FF0000">
+  <div class="wrap">
+    <div class="ptitle"><svg class="ic"><use href="#i-yt"/></svg><h1 class="d">YouTube</h1></div>
+  </div>
+  <div class="band">
+    <div class="wrap">
+      <div class="stats three">
+        <div><b>1.61M</b><span>Subscribers</span></div>
+        <div><b>696M</b><span>Total views</span></div>
+        <div><b>1,158</b><span>Videos</span></div>
+      </div>
+      <p class="note">As of 24 October 2026.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <section>
+      <h2 class="d">Latest and most watched</h2>
+      <div class="vgrid">
+        <a class="vcard" href="https://www.youtube.com/watch?v=tSXhY9hGblA" target="_blank" rel="noopener"><figure class="thumb" data-thumb="tSXhY9hGblA"><img src="https://i.ytimg.com/vi/tSXhY9hGblA/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><span class="badge">Latest</span><strong>Is this the end of the old ASMR microphone?</strong><small>22 October 2026</small></a>
+        <a class="vcard" href="https://www.youtube.com/watch?v=xJAEJ2VUpp8" target="_blank" rel="noopener"><figure class="thumb" data-thumb="xJAEJ2VUpp8"><img src="https://i.ytimg.com/vi/xJAEJ2VUpp8/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><strong>ASMR 1000 triggers with friends | 1 million ASMR special</strong><small>5.03M views · July 2024</small></a>
+        <a class="vcard" href="https://www.youtube.com/watch?v=y0o0KullzKk" target="_blank" rel="noopener"><figure class="thumb" data-thumb="y0o0KullzKk"><img src="https://i.ytimg.com/vi/y0o0KullzKk/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><strong>$1 vs $1,000 head massage ASMR</strong><small>2.86M views · March 2025</small></a>
+        <a class="vcard" href="https://www.youtube.com/watch?v=D2lu3pMsCOo" target="_blank" rel="noopener"><figure class="thumb" data-thumb="D2lu3pMsCOo"><img src="https://i.ytimg.com/vi/D2lu3pMsCOo/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><strong>9 ASMRtists give me ASMR</strong><small>2.53M views · July 2025</small></a>
+        <a class="vcard" href="https://www.youtube.com/watch?v=hG_ltwII8HI" target="_blank" rel="noopener"><figure class="thumb" data-thumb="hG_ltwII8HI"><img src="https://i.ytimg.com/vi/hG_ltwII8HI/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><strong>This ASMR will be the best sleep of your life (3 hours)</strong><small>2.39M views · November 2023</small></a>
+        <a class="vcard" href="https://www.youtube.com/watch?v=IBpgUDLEJZU" target="_blank" rel="noopener"><figure class="thumb" data-thumb="IBpgUDLEJZU"><img src="https://i.ytimg.com/vi/IBpgUDLEJZU/hqdefault.jpg" alt="Video thumbnail" loading="lazy" decoding="async"></figure><strong>This ASMR will be the best sleep of your life</strong><small>2.37M views · December 2024</small></a>
+      </div>
+      <p class="more"><a href="https://www.youtube.com/@DongASMR" target="_blank" rel="noopener">Watch all videos on YouTube</a></p>
+    </section>
+  </div>
+</div>
+
+<!-- TIKTOK -->
+<div data-view="tiktok" hidden style="--brand:#FE2C55">
+  <div class="wrap">
+    <div class="ptitle"><svg class="ic"><use href="#i-tt"/></svg><h1 class="d">TikTok</h1></div>
+  </div>
+  <div class="band">
+    <div class="wrap">
+      <div class="stats three">
+        <div><b>676K</b><span>Followers</span></div>
+        <div><b>19.6M</b><span>Likes</span></div>
+        <div><b>395</b><span>Videos</span></div>
+      </div>
+      <p class="note">From the public TikTok profile and third-party trackers. Counts may be slightly behind.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <section>
+      <h2 class="d">Popular clips</h2>
+      <div class="vgrid">
+        <a class="vcard" href="https://www.tiktok.com/@realdongasmr/video/7419674267173850376" target="_blank" rel="noopener"><figure class="thumb tall" data-thumb="tt1">Thumbnail</figure><strong>0% or 100%?</strong><small>78.2K likes</small></a>
+        <a class="vcard" href="https://www.tiktok.com/@realdongasmr/video/7507237498091834641" target="_blank" rel="noopener"><figure class="thumb tall" data-thumb="tt2">Thumbnail</figure><strong>Blessing you with this trigger</strong><small>16.7K likes</small></a>
+      </div>
+      <p class="more"><a href="https://www.tiktok.com/@realdongasmr" target="_blank" rel="noopener">Watch more on TikTok</a></p>
+    </section>
+  </div>
+</div>
+</main>
+
+<div class="wrap">
+  <section style="padding-top:0">
+    <h2 class="d">Business enquiries</h2>
+    <a class="big" href="mailto:partnerships@whitenoisestudios.co">partnerships@whitenoisestudios.co</a>
+  </section>
+  <footer>© 2026 Dong ASMR</footer>
+</div>
+
+<script>
+(function(){
+  var views=document.querySelectorAll("[data-view]"), links=document.querySelectorAll("[data-nav]");
+  var names={home:"Dong ASMR",youtube:"YouTube | Dong ASMR",tiktok:"TikTok | Dong ASMR"};
+  function show(){
+    var h=(location.hash||"").slice(1);
+    if(!names[h]) h="home";
+    views.forEach(function(v){v.hidden=v.dataset.view!==h;});
+    links.forEach(function(a){ if(a.dataset.nav===h) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+    document.title=names[h]; window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",show); show();
+
+  var ctx=null, noise=null;
+  function init(){
+    if(ctx) return true;
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext; ctx=new AC();
+      var n=ctx.sampleRate*3, b=ctx.createBuffer(1,n,ctx.sampleRate), d=b.getChannelData(0);
+      for(var i=0;i<n;i++) d[i]=Math.random()*2-1;
+      noise=b; return true;
+    }catch(e){return false;}
+  }
+  function burst(t,dur,type,f0,f1,peak,q){
+    var s=ctx.createBufferSource(); s.buffer=noise;
+    var f=ctx.createBiquadFilter(); f.type=type; f.Q.value=q||1;
+    f.frequency.setValueAtTime(f0,t); if(f1) f.frequency.linearRampToValueAtTime(f1,t+dur);
+    var g=ctx.createGain(); g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(peak,t+dur*0.25);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    s.connect(f); f.connect(g); g.connect(ctx.destination);
+    s.start(t,Math.random()*1.5,dur+0.05);
+  }
+  var sounds={
+    tap:function(t){burst(t,0.07,"bandpass",1700,900,0.35,4); burst(t+0.16,0.07,"bandpass",1900,1000,0.28,4);},
+    brush:function(t){burst(t,1.3,"bandpass",2500,6500,0.22,0.8);},
+    crinkle:function(t){for(var i=0;i<16;i++) burst(t+Math.random()*0.9,0.03+Math.random()*0.04,"highpass",3500+Math.random()*3000,0,0.18,1);},
+    breath:function(t){burst(t,2.4,"lowpass",700,1100,0.3,0.7);}
+  };
+  document.querySelectorAll(".pill[data-s]").forEach(function(p){
+    p.addEventListener("click",function(){
+      if(!init()) return;
+      if(ctx.state==="suspended") ctx.resume();
+      sounds[p.dataset.s](ctx.currentTime+0.01);
+    });
+  });
+})();
+</script>
+</body>
+</html>
